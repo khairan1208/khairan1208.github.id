@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; background-image: url("latar5.jpg"); padding:20px; }
+    h2 { margin-bottom:10px; color: black; }
+    textarea, input { background-color: #75ca82; padding:8px; border:1px solid #000000; border-radius:5px; color: rgb(5, 5, 5); }
+    button { padding:8px 12px; margin-right:5px; border:none; background:#4CAF50; color:white; border-radius:5px; cursor:pointer; }
+    button:hover { background:#45a049; }
+    #result { background:rgb(118, 171, 104); padding:10px; border:1px solid #000000; border-radius:5px; width:300px; min-height:40px; }
+  </style> 
+  </style>
+</head>
+<body>
+  <h2>Caesar Cipher</h2>
+
+  <textarea id="text" rows="4" cols="40" placeholder="Teks..."></textarea><br><br>
+  Shift: <input type="number" id="shift" value="3"><br><br>
+
+  <button onclick="encrypt()">Enkripsi</button>
+  <button onclick="decrypt()">Deskripsi</button>
+
+  <p>Hasil:</p>
+  <pre id="result"></pre>
+
+  <script>
+    function caesar(str, shift) {
+        shift = ((shift % 26) + 26) % 26;
+      return str.replace(/[a-z]/gi, c => {
+        const base = c === c.toUpperCase() ? 65 : 97;
+        return String.fromCharCode((c.charCodeAt(0) - base + shift + 26) % 26 + base);
+      });
+    }
+
+    function encrypt() {
+      const t = document.getElementById("text").value;
+      const s = parseInt(document.getElementById("shift").value);
+      document.getElementById("result").textContent = caesar(t, s);
+    }
+
+    function decrypt() {
+      const t = document.getElementById("text").value;
+      const s = parseInt(document.getElementById("shift").value);
+      document.getElementById("result").textContent = caesar(t, -s);
+    }
+  </script>
+</body>
+</html>
