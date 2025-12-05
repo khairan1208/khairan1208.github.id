@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("latar5.jpg");
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+textarea,
+input {
+  background-color: #75ca82;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  color: rgb(5, 5, 5);
+}
+
+button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+#result {
+  background: rgb(118, 171, 104);
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 300px;
+  min-height: 40px;
+}
